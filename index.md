@@ -9,7 +9,7 @@
 
 > | Challenge | Topic | Links |
 > | --- | --- | --- |
-> | Level 1 | Arduino & Basic Electronics | [Documentation](https://scicopath.github.io/Kerala-IoT-Challenge/pages/level_1) |
+> | Level 1 | Arduino & Basic Electronics | [Documentation](https://sci-copath.github.io/Kerala-IoT-Challenge/pages/level_1) |
 > | Level 2 | | |
 > | Level 3 | | | 
 > | Level 4 | | | 
