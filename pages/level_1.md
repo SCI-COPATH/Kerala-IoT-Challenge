@@ -14,7 +14,7 @@
 ### Circuit
 ![Expriment 1](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp1.png)
 ### Video
-
+![Expriment ](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp1.gif)
 ### Tutorial 
 #### Episode 1
 
