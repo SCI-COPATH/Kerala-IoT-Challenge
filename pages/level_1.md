@@ -62,16 +62,19 @@ void loop(){
 ### Circuit
 ![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp2.png)
 ### Video
-![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp2.mp4)
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp2.gif)
 ### Tutorial 
 #### Variable
 
 [![Episode 5](https://img.youtube.com/vi/VrcApmzJzVY/0.jpg)](https://youtu.be/VrcApmzJzVY "Episode 5")
 
-#### Loop
+####  Wor Loop
 
 [![Episode 7](https://img.youtube.com/vi/fqL6mSHM1jg/0.jpg)](https://youtu.be/fqL6mSHM1jg "Episode 5")
 
+####  While Loop
+
+[![While loop](https://img.youtube.com/vi/j-JVj-6yPUo/0.jpg)](https://youtu.be/j-JVj-6yPUo)
 
 ### Code
 ```ino
@@ -112,3 +115,68 @@ void loop(){
 }
 ```
 
+## Experiment 3 - LED Chasing Effect
+### Components
+* Arduino Uno
+* Breadboard
+* LED 6
+* Jumper wire
+* Restsor 220 ohm
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp3.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp3.gif)
+### Tutorial 
+#### Serial monitor
+
+[![Serial Monitor](https://img.youtube.com/vi/-sCEvx2VxC4/0.jpg)](https://youtu.be/-sCEvx2VxC4)
+
+#### String
+
+[![String](https://img.youtube.com/vi/vtg_r1M-Tfw/0.jpg)](https://youtu.be/vtg_r1M-Tfw "Episode 5")
+
+#### Serial Monitor input
+
+[![String](https://img.youtube.com/vi/Un76nTKgADI/0.jpg)](https://youtu.be/Un76nTKgADI "Episode 5")
+
+#### Array
+
+[![Array](https://img.youtube.com/vi/FRhzuWl39qg/0.jpg)](https://youtu.be/FRhzuWl39qg "Episode 5")
+
+### Code
+```ino
+//Make array and store led pins
+int LED[]={10,9,8,7,6,5};
+//commen delay time
+int DELAY_TIME = 50;
+int i=0; // make a itrating variable and assain value 0
+void setup(){ 
+  //set all led are output
+  for(int i=0;i<6;i++){
+    pinMode(LED[i],OUTPUT);
+  }
+} 
+// right looping
+void loop(){
+  while(i<6){
+    digitalWrite(LED[i],HIGH);
+    delay(DELAY_TIME);
+    digitalWrite(LED[i],LOW);
+    delay(DELAY_TIME);
+    i++; // i=i+1
+  }
+  i-=2; // i=i-2
+  //left looping
+  while(i>=0){
+    digitalWrite(LED[i],HIGH);
+    delay(DELAY_TIME);
+    digitalWrite(LED[i],LOW);
+    delay(DELAY_TIME);
+    i--; //i=i-1
+  }
+  i+=2; // i=i+2
+  
+
+}
+```
