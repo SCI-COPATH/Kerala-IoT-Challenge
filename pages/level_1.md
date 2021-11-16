@@ -5,10 +5,10 @@
 
 ### Experiment 1 - Hello World LED Blinking
 #### Components
-> Arduino Uno
-> Breadboard
-> LED
-> Jumper wire
+* Arduino Uno
+* Breadboard
+* LED
+* Jumper wire
 
 #### Circuit
 
