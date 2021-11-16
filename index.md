@@ -7,9 +7,12 @@
 
 ### Levels of IoT Challenge
 
-> | Challenge | Topic | Links | Start Date |
-> | --- | --- | --- | --- |
-> | Level 1 | Arduino & Basic Electronics | [Documentation](https://decoded-cipher.github.io/Kerala-IoT-Challenge/level_1) | 29th July 2021 |
-> | Level 2 | Introduction to IoT & ESP32 | [Documentation](https://decoded-cipher.github.io/Kerala-IoT-Challenge/level_2) | 8th Oct 2021 |
-> | Level 3 | | | |
-> | Level 4 | | | |
+> | Challenge | Topic | Links |
+> | --- | --- | --- |
+> | Level 1 | Arduino & Basic Electronics | [Documentation](https://decoded-cipher.github.io/Kerala-IoT-Challenge/level_1) |
+> | Level 2 | | |
+> | Level 3 | | | 
+> | Level 4 | | | 
+
+
+
