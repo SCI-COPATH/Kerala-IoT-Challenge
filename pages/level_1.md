@@ -68,7 +68,7 @@ void loop(){
 
 [![Episode 5](https://img.youtube.com/vi/VrcApmzJzVY/0.jpg)](https://youtu.be/VrcApmzJzVY "Episode 5")
 
-####  Wor Loop
+####  For Loop
 
 [![Episode 7](https://img.youtube.com/vi/fqL6mSHM1jg/0.jpg)](https://youtu.be/fqL6mSHM1jg "Episode 5")
 
@@ -178,5 +178,73 @@ void loop(){
   i+=2; // i=i+2
   
 
+}
+```
+
+## Experiment 4 -Button Controlled LED
+### Components
+* Arduino Uno
+* Breadboard
+* LED 
+* Jumper wire
+* Restsor 220 ohm , 10 ohm
+* michro switch
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp4.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp4.gif)
+### Tutorial 
+#### Arduino push buttion
+
+[![push buttion](https://img.youtube.com/vi/XCZ2Vx_rPF0?t.jpg)](https://youtu.be/XCZ2Vx_rPF0?t=1252)
+#### Reading 
+
+[![String](https://img.youtube.com/vi/7BQzt1F1qik/0.jpg)](https://youtu.be/7BQzt1F1qik "Episode 5")
+
+
+### Code
+```ino
+// set Read pin 10
+#define READ_PIN 10
+// led colnnect 13 
+#define LED 13
+bool readData=0;
+void setup(){ 
+  pinMode(READ_PIN ,INPUT);
+  pinMode(LED ,OUTPUT);
+} 
+void loop(){
+  readData=digitalRead(READ_PIN); // read data
+  Serial.println(readData);
+  digitalWrite(LED,readData); // read data high LED WILL ON otherwice led will off
+}
+```
+
+## Experiment 5 -Button Controlled LED
+### Components
+* Arduino 
+* Breadboard
+* BUZZER
+* Jumper wire
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp5.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp5.gif)
+
+
+### Code
+```ino
+// Buzzer Connect 13
+#define BUZZER 13
+void setup(){ 
+  pinMode(BUZZER ,OUTPUT);
+} 
+void loop(){
+  digitalWrite(BUZZER,HIGH); // BUZZER ON
+  delay(1000);
+  digitalWrite(BUZZER,LOW); // BUZZER OFF
+  delay(1000);
 }
 ```
