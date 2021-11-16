@@ -16,19 +16,23 @@
 ### Video
 ![Expriment ](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp1.gif)
 ### Tutorial 
-#### Episode 1
+#### Introduction
 
 [![Episode 1](https://img.youtube.com/vi/DlvjYghBKKU/0.jpg)](https://youtu.be/DlvjYghBKKU "Episode 1")
 
-#### Episode 2
+#### Arduino pinout
 
 [![Episode 2](https://img.youtube.com/vi/JMvJE9pLN_Y/0.jpg)](https://youtu.be/JMvJE9pLN_Y "Episode 2")
 
-#### Episode 3
+#### Arduino Frist Program
 
 [![Episode 3](https://img.youtube.com/vi/o5wSSsODvZw/0.jpg)](https://youtu.be/o5wSSsODvZw "Episode 3")
 
-#### Episode 4
+#### Breadboard
+
+[![Episode 6](https://img.youtube.com/vi/GZQtvCtWEbI/0.jpg)](https://youtu.be/GZQtvCtWEbI "Episode 4")
+
+#### Led blink
 
 [![Episode 4](https://img.youtube.com/vi/rbxlbgfqMLk/0.jpg)](https://youtu.be/rbxlbgfqMLk "Episode 4")
 
@@ -43,6 +47,68 @@ void loop(){
   delay(1000);
   digitalWrite(LED, LOW);
   delay(1000);
+}
+```
+
+
+## Experiment 2 - Traffic Light
+### Components
+* Arduino Uno
+* Breadboard
+* LED RED BLUE GREEN
+* Jumper wire
+* Restsor 220 ohm
+
+### Circuit
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp2.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp2.mp4)
+### Tutorial 
+#### Variable
+
+[![Episode 5](https://img.youtube.com/vi/VrcApmzJzVY/0.jpg)](https://youtu.be/VrcApmzJzVY "Episode 5")
+
+#### Loop
+
+[![Episode 7](https://img.youtube.com/vi/fqL6mSHM1jg/0.jpg)](https://youtu.be/fqL6mSHM1jg "Episode 5")
+
+
+### Code
+```ino
+#define RED 7
+#define YELLOW 6
+#define GREEN 5
+void setup(){ 
+  pinMode(RED, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+} 
+void loop(){
+  //Red led on , green led off and wait 5 secound then Red led OFF
+  digitalWrite(RED, HIGH);  
+  digitalWrite(GREEN, LOW);
+  delay(5000);
+  digitalWrite(RED, LOW);
+  // yellow led blink 3 time in 0.5 sec
+  for(int i=0;i<3;i++){ 
+    digitalWrite(YELLOW,HIGH);
+    delay(500);
+    digitalWrite(YELLOW,LOW);
+    delay(500);
+  }
+  //Green led on , Red led off and wait 5 secound then Green LED OFF
+  digitalWrite(GREEN, HIGH);  
+  digitalWrite(RED, LOW);
+  delay(5000);
+  digitalWrite(GREEN, LOW);
+  // yellow led blink 3 time in 0.5 sec
+  for(int i=0;i<3;i++){ 
+    digitalWrite(YELLOW,HIGH);
+    delay(500);
+    digitalWrite(YELLOW,LOW);
+    delay(500);
+  }
+
 }
 ```
 
