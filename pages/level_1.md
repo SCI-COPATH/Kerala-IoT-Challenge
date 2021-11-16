@@ -9,9 +9,10 @@
 * Breadboard
 * LED
 * Jumper wire
+* Restsor 150 ohm
 
 #### Circuit
-
+![Expriment 1](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/exp1.png)
 #### Video
 
 #### Tutorial 
