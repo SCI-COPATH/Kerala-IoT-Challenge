@@ -144,6 +144,9 @@ void loop(){
 
 [![Array](https://img.youtube.com/vi/FRhzuWl39qg/0.jpg)](https://youtu.be/FRhzuWl39qg "Episode 5")
 
+#### i++,i--
+
+[![Array](https://img.youtube.com/vi/1juml255rbI/0.jpg)](https://youtu.be/1juml255rbI "Episode 5")
 ### Code
 ```ino
 //Make array and store led pins
@@ -201,6 +204,9 @@ void loop(){
 #### Reading 
 
 [![String](https://img.youtube.com/vi/7BQzt1F1qik/0.jpg)](https://youtu.be/7BQzt1F1qik "Episode 5")
+#### INPUT PULLUP 
+
+[![push buttion](https://img.youtube.com/vi/y3rjdNJ-8Bs/0.jpg)](https://youtu.be/y3rjdNJ-8Bs)
 
 
 ### Code
@@ -221,7 +227,7 @@ void loop(){
 }
 ```
 
-## Experiment 5 -Button Controlled LED
+## Experiment 5 -BUZZER
 ### Components
 * Arduino 
 * Breadboard
@@ -246,5 +252,54 @@ void loop(){
   delay(1000);
   digitalWrite(BUZZER,LOW); // BUZZER OFF
   delay(1000);
+}
+```
+
+
+## Experiment 6 -RGB LED
+### Components
+* Arduino Uno
+* Breadboard
+* RGB LED
+* Jumper wire
+* Restsor 220 ohm 
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp6.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp6.gif)
+### Tutorial 
+#### Analog Write
+
+[![push buttion](https://img.youtube.com/vi/G_p7adSctlQ/0.jpg)](https://youtu.be/G_p7adSctlQ)
+
+#### RGB PART 1
+
+[![push buttion](https://img.youtube.com/vi/U7VH3QLO9kk/0.jpg)](https://youtu.be/U7VH3QLO9kk)
+
+#### RGB PART 2
+
+[![String](https://img.youtube.com/vi/1BCXbkFEB-E/0.jpg)](https://youtu.be/1BCXbkFEB-E "Episode 5")
+
+
+### Code
+```ino
+// Buzzer Connect 13
+int RGB_LED[]={11,9,10};
+void setup(){ 
+  for(int i=0;i<3;i++)
+    pinMode(RGB_LED[i],OUTPUT);
+} 
+void loop(){
+  for(i=0;i<3;i++){
+    for(int j=0;j<255;j++){
+      analogWrite(RGB_LED[i],j);
+    }
+  }
+  for(i=255;i>=0;i--){
+    for(int j=0;j<3;j++){
+      analogWrite(RGB_LED[j],i);
+    }
+  }
 }
 ```
