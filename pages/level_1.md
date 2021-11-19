@@ -284,22 +284,101 @@ void loop(){
 
 ### Code
 ```ino
-// Buzzer Connect 13
 int RGB_LED[]={11,9,10};
 void setup(){ 
   for(int i=0;i<3;i++)
     pinMode(RGB_LED[i],OUTPUT);
 } 
 void loop(){
-  for(i=0;i<3;i++){
-    for(int j=0;j<255;j++){
-      analogWrite(RGB_LED[i],j);
-    }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],j);
+    analogWrite(RGB_LED[1],0);
+    analogWrite(RGB_LED[2],0);
+    delay(5);
   }
-  for(i=255;i>=0;i--){
-    for(int j=0;j<3;j++){
-      analogWrite(RGB_LED[j],i);
-    }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],0);
+    analogWrite(RGB_LED[1],j);
+    analogWrite(RGB_LED[2],0);
+    delay(5);
   }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],0);
+    analogWrite(RGB_LED[1],0);
+    analogWrite(RGB_LED[2],j);
+    delay(5);
+  }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],j);
+    analogWrite(RGB_LED[1],j);
+    analogWrite(RGB_LED[2],0);
+    delay(5);
+  }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],j);
+    analogWrite(RGB_LED[1],0);
+    analogWrite(RGB_LED[2],j);
+    delay(5);
+  }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],0);
+    analogWrite(RGB_LED[1],j);
+    analogWrite(RGB_LED[2],j);
+    delay(5);
+  }
+  for(int j=0;j<255;j++){
+    analogWrite(RGB_LED[0],j);
+    analogWrite(RGB_LED[1],j);
+    analogWrite(RGB_LED[2],j);
+    delay(5);
+  }
+  
+}
+```
+
+
+## Experiment  7- LDR SENSOR 
+### Components
+* Arduino Uno
+* Breadboard
+* RED,GREEN LED
+* Jumper wire
+* Restsor 220 ohm 10 k
+* LDR Sensor
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp7.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp7.gif)
+
+### Tutorial 
+#### AND GATE
+
+[![push buttion](https://img.youtube.com/vi/TdUOHEYF2CY/0.jpg)](https://youtu.be/TdUOHEYF2CY)
+
+#### OR GATE
+
+[![push buttion](https://img.youtube.com/vi/sjyriFBLsDA/0.jpg)](https://youtu.be/sjyriFBLsDA)
+
+#### NOT GATE
+
+[![push buttion](https://img.youtube.com/vi/cBqBqIPWQuM/0.jpg)](https://youtu.be/cBqBqIPWQuM)
+
+
+### Code
+```ino
+#define LDR 12 // LDR CONNECT 12
+#define RLED 11 // Red LED CONNECT 11
+#define GLED 10 // Green LED Connect 10
+bool readData=0;
+void setup(){ 
+  pinMode(RLED,OUTPUT);
+  pinMode(GLED,OUTPUT);
+  pinMode(LDR,INPUT);
+} 
+void loop(){
+  readData=digitalRead(LDR);
+  digitalWrite(RLED,readData);
+  digitalWrite(GLED,!readData);
 }
 ```
