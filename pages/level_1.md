@@ -382,3 +382,68 @@ void loop(){
   digitalWrite(GLED,!readData);
 }
 ```
+
+## Experiment  8- FLAME SENSOR 
+### Components
+* Arduino Uno
+* Breadboard
+* RED LED
+* BUZZER
+* Jumper wire
+* Restsor 220 ohm 10 k
+* Flame Sensor
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp8.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp8.gif)
+
+### Tutorial 
+#### Analog Write
+
+[![push buttion](https://img.youtube.com/vi/ABhevxYkiFQ/0.jpg)](https://youtu.be/ABhevxYkiFQ)
+
+#### UntraSonic
+
+[![push buttion](https://img.youtube.com/vi/tKnVDJwvXkk/0.jpg)](https://youtu.be/tKnVDJwvXkk)
+
+#### UntraSonic Distance
+
+[![push buttion](https://img.youtube.com/vi/DWgt-iInhzs/0.jpg)](https://youtu.be/DWgt-iInhzs)
+
+#### Simple if
+
+[![push buttion](https://img.youtube.com/vi/MIoKLvJZ-AY/0.jpg)](https://youtu.be/MIoKLvJZ-AY)
+
+#### else if laddar
+
+[![push buttion](https://img.youtube.com/vi/kUHdW2-leaQ/0.jpg)](https://youtu.be/kUHdW2-leaQ)
+
+#### Switch
+
+[![push buttion](https://img.youtube.com/vi/596gRADm_OY/0.jpg)](https://youtu.be/596gRADm_OY)
+
+### Code
+```ino
+#define FLAME A0 // Flaem sensor CONNECT A0
+#define RED 11 // Red LED CONNECT 11
+#define BUZZER 10 // Buzzer LED Connect 10
+
+int data;
+void setup(){ 
+  pinMode(RED,OUTPUT);
+  pinMode(FLAME,INPUT);
+  pinMode(BUZZER,OUTPUT);
+} 
+void loop(){
+  data=digitalRead(FLAME);
+  if(data>600){
+    digitalWrite(RED,HIGH);
+    digitalWrite(BUZZER,HIGH);
+  }else{
+    digitalWrite(RED,LOW);
+    digitalWrite(BUZZER,LOW);
+  }
+  delay(500);
+}
+```
