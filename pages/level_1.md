@@ -434,16 +434,58 @@ void setup(){
   pinMode(RED,OUTPUT);
   pinMode(FLAME,INPUT);
   pinMode(BUZZER,OUTPUT);
+  Serial.begin(9600);
 } 
 void loop(){
-  data=digitalRead(FLAME);
+  data=analogRead(FLAME);
+  Serial.print("DATA :");
+  Serial.println(data);
   if(data>600){
     digitalWrite(RED,HIGH);
     digitalWrite(BUZZER,HIGH);
+    delay(1000);
   }else{
     digitalWrite(RED,LOW);
     digitalWrite(BUZZER,LOW);
   }
-  delay(500);
+}
+```
+
+## Experiment  9- LM35 Temperature Sensor
+### Components
+* Arduino Uno
+* Breadboard
+* Jumper wire
+
+### Sensor
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/temp1.jpg)
+
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/temp2.jpg)
+
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/temp3.png)
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp9.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp9.gif)
+
+
+### Code
+```ino
+#define LM35_SENSOR A0 // Flaem sensor CONNECT A0
+float readData;
+float tempC,tempF;
+void setup(){ 
+  pinMode(LM35_SENSOR,INPUT);
+  Serial.begin(9600);
+} 
+void loop(){
+  readData=analogRead(LM35_SENSOR);
+  tempC=(readData/1024.0)*500;
+  Serial.print("Temprature : ");
+  Serial.print(tempC);
+  Serial.print(" *C =");
+  tempF=(tempC*9.0)/5.0 + 32.0;
+  Serial.print(tempF);
+  Serial.println(" *F");
 }
 ```
