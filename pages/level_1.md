@@ -489,3 +489,82 @@ void loop(){
   Serial.println(" *F");
 }
 ```
+
+
+
+## Experiment  10- IR Remote Control Using TSOP
+### Components
+* Arduino Uno
+* Breadboard
+* Jumper wire
+* IR Recever (TSOP)
+* 5 LED
+* 220 ohm Resistor
+* IR REMOTE (Any remote)
+
+### Sensor
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/ir1.jpg)
+
+## IR Decode 
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp101.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp101.gif)
+
+
+### Code
+```ino
+#define IR_PIN A0 // IR sensor connect
+#include<IRremote.h> // IR library
+IRrecv irrecv(IR_PIN); // connect ir pin to library
+decode_results  result; 
+void setup(){ 
+  Serial.begin(9600);
+  irrecv.enableIRIn(); 
+  
+} 
+void loop(){
+  if(irrecv.decode(&result)){
+    Serial.println(result.value,HEX);
+    irrecv.resume();
+  }
+}
+```
+
+# IR LED Controll 
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp102.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp102.gif)
+
+
+### Code
+```ino
+#define IR_PIN A0 // Flaem sensor CONNECT A0
+#include<IRremote.h>
+unsigned long receveData[]={0x1FE50AF,0x1FED827,0x1FEF807,0x1FE30CF,0x1FEB04F,0x1FE708F};
+bool statusData[]{0,0,0,0,0,0};
+int led[]={7,6,5,4,3,2};
+IRrecv irrecv(IR_PIN);
+decode_results  result;
+void setup(){ 
+  Serial.begin(9600);
+  irrecv.enableIRIn();
+  for(int i=0;i<6;i++)
+    pinMode(led[i],OUTPUT);
+} 
+void loop(){
+  if(irrecv.decode(&result)){
+    Serial.println(result.value,HEX);
+    for(int i=0;i<6;i++){
+      if(result.value==receveData[i]){
+        statusData[i]=!statusData[i];
+        digitalWrite(led[i],statusData[i]);
+      }
+    }
+    irrecv.resume();
+  }
+}
+```
