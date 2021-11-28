@@ -568,3 +568,48 @@ void loop(){
   }
 }
 ```
+
+
+
+## Experiment  12- Seven Segment Display
+### Components
+* Arduino Uno
+* Breadboard
+* Seven Segment Display
+* Jumper wire
+* Restsor 220 ohm
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/exp12.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/exp12.gif)
+
+### Tutorial 
+#### Function Part 1
+
+[![push buttion](https://img.youtube.com/vi/BDBEbeV0VbM/0.jpg)](https://youtu.be/BDBEbeV0VbM)
+
+#### Function Part 2
+
+[![push buttion](https://img.youtube.com/vi/XKQ-9TCcaIQ/0.jpg)](https://youtu.be/XKQ-9TCcaIQ)
+
+
+
+
+### Code
+```ino
+#define LDR 12 // LDR CONNECT 12
+#define RLED 11 // Red LED CONNECT 11
+#define GLED 10 // Green LED Connect 10
+bool readData=0;
+void setup(){ 
+  pinMode(RLED,OUTPUT);
+  pinMode(GLED,OUTPUT);
+  pinMode(LDR,INPUT);
+} 
+void loop(){
+  readData=digitalRead(LDR);
+  digitalWrite(RLED,readData);
+  digitalWrite(GLED,!readData);
+}
+```
