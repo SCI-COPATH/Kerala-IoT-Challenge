@@ -598,18 +598,301 @@ void loop(){
 
 ### Code
 ```ino
-#define LDR 12 // LDR CONNECT 12
-#define RLED 11 // Red LED CONNECT 11
-#define GLED 10 // Green LED Connect 10
-bool readData=0;
+
+int sevenSeg[]={13,12,11,10,9,8,7,6};
+void number(int i){
+  switch(i){
+    case 0: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],HIGH);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+    case 1: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],HIGH);
+            digitalWrite(sevenSeg[2],HIGH);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],HIGH);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],HIGH);
+            digitalWrite(sevenSeg[7],HIGH);
+            break;
+    case 2: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],HIGH);
+            
+           // digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],HIGH);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+    case 3: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],HIGH);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+    case 4: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],HIGH);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],HIGH);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+
+    case 5: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],HIGH);
+            break;
+   case 6: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],HIGH);
+            break;
+    case 7: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],HIGH);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],HIGH);
+            
+            digitalWrite(sevenSeg[5],HIGH);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+   case 8: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+   case 9: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+      
+  }
+  
+}
 void setup(){ 
-  pinMode(RLED,OUTPUT);
-  pinMode(GLED,OUTPUT);
-  pinMode(LDR,INPUT);
+  Serial.begin(9600);
+ 
+  for(int i=0;i<8;i++){
+    pinMode(sevenSeg[i],OUTPUT);
+    digitalWrite(sevenSeg[i],HIGH);
+  }
+  
+    
 } 
 void loop(){
-  readData=digitalRead(LDR);
-  digitalWrite(RLED,readData);
-  digitalWrite(GLED,!readData);
+  for(int i=9;i>=0;i--){
+    number(i);
+    delay(750);
+  }
+}
+```
+
+# Assigenment  
+## Assigenment 2 - 6 Number Random Dice
+
+### Components
+* Arduino Uno
+* Breadboard
+* pushbuttion
+* Jumper wire
+* Restsor 220 ohm
+* push buttion
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/ass2.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/ass2.gif)
+
+
+### Code
+```ino
+#define readPin A0
+bool readStatus=0;
+int sevenSeg[]={13,12,11,10,9,8,7,6};
+void number(int i){
+  switch(i){
+    case 0: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],HIGH);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+    case 1: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],HIGH);
+            digitalWrite(sevenSeg[2],HIGH);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],HIGH);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],HIGH);
+            digitalWrite(sevenSeg[7],HIGH);
+            break;
+    case 2: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],HIGH);
+            
+           // digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],HIGH);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+    case 3: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],HIGH);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+    case 4: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],HIGH);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],HIGH);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+
+    case 5: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],HIGH);
+            break;
+   case 6: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH); 
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],HIGH);
+            break;
+    case 7: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],HIGH);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],HIGH);
+            
+            digitalWrite(sevenSeg[5],HIGH);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+   case 8: digitalWrite(sevenSeg[0],LOW);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+   case 9: digitalWrite(sevenSeg[0],HIGH);
+            digitalWrite(sevenSeg[1],LOW);
+            digitalWrite(sevenSeg[2],LOW);
+            
+            //digitalWrite(sevenSeg[3],HIGH);
+            digitalWrite(sevenSeg[4],LOW);
+            
+            digitalWrite(sevenSeg[5],LOW);
+            digitalWrite(sevenSeg[6],LOW);
+            digitalWrite(sevenSeg[7],LOW);
+            break;
+      
+  }
+  
+}
+void setup(){ 
+  Serial.begin(9600);
+ 
+  for(int i=0;i<8;i++){
+    pinMode(sevenSeg[i],OUTPUT);
+    digitalWrite(sevenSeg[i],HIGH);
+  }
+  pinMode(readPin,INPUT_PULLUP);
+  
+  
+    
+} 
+void loop(){
+  if(readStatus==0&&digitalRead(readPin)==LOW){
+    number(random(1,7));
+    readStatus=1;
+  }else if(digitalRead(readPin)==HIGH&&readStatus==1){
+    readStatus=0;
+  }
+  delay(50);
 }
 ```
