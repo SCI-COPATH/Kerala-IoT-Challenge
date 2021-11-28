@@ -735,7 +735,42 @@ void loop(){
 }
 ```
 
-# Assigenment  
+# Assigenment 
+
+## Assigenment  1- Night lighting system 
+### Components
+* Arduino Uno
+* Breadboard
+* RED,GREEN LED
+* Jumper wire
+* Restsor 220 ohm 10 k
+* LDR Sensor
+
+### Circuit
+![Expriment 3](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/ass1.png)
+### Video
+![Expriment 2](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/ass1.gif)
+
+### Code
+```ino
+#define LDR A0// LDR CONNECT A0
+#define LED 11 // LED CONNECT 11
+int readData=0;
+void setup(){ 
+  pinMode(LED,OUTPUT);
+  pinMode(LDR,INPUT);
+  Serial.begin(9600);
+} 
+void loop(){
+  readData=analogRead(LDR);
+  Serial.println(readData);
+  if(readData>200)
+    digitalWrite(LED,HIGH);
+  else
+    digitalWrite(LED,LOW);
+}
+```
+
 ## Assigenment 2 - 6 Number Random Dice
 
 ### Components
