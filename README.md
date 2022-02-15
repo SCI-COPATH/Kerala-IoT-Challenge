@@ -5,9 +5,10 @@
 > This page is maintained so as to keep the track of my experiments at different levels of **Kerala IoT Challenge**. The following table includes the links to all of my challenge write-ups. 
 
 ### Table of Write-ups
-| Challenge | Topic | Links |
-| --- | --- | --- |
-| Level 1 | Arduino & Basic Electronics | [Documentation](https://sci-copath.github.io/Kerala-IoT-Challenge/pages/level_1) |
-| Level 2 | | |
-| Level 3 | | | 
-| Level 4 | | |
+
+> | Challenge | Topic | Links |
+> | --- | --- | --- |
+> | Level 1 | Arduino & Basic Electronics | [Documentation](https://sci-copath.github.io/Kerala-IoT-Challenge/pages/level_1) |
+> | Level 2 |  Introduction to IoT & ESP32 | [Documentation](https://sci-copath.github.io/Kerala-IoT-Challenge/pages/level_2) |
+> | Level 3 | | | 
+> | Level 4 | | | 

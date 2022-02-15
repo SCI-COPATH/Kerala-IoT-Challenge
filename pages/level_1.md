@@ -11,8 +11,6 @@
 * Jumper wire
 * Restsor 150 ohm
 
-### Circuit
-![Expriment 1](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/image/level1/exp1.png)
 ### Video
 ![Expriment ](https://sci-copath.github.io/Kerala-IoT-Challenge/assat/videos/level1/exp1.gif)
 ### Tutorial 
